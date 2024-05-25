@@ -5,7 +5,7 @@ import com.yupi.pengoj.common.ErrorCode;
 /**
  * 自定义异常类
  *
- * @author <a href="https://github.com/liyupi">程序员鱼皮</a>
+ * @author <a href="https://github.com/p2yin">Pengyu Yin</a>
  *
  */
 public class BusinessException extends RuntimeException {

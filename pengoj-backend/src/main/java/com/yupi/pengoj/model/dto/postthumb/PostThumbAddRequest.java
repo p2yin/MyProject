@@ -6,7 +6,7 @@ import lombok.Data;
 /**
  * 帖子点赞请求
  *
- * @author <a href="https://github.com/liyupi">程序员鱼皮</a>
+ * @author <a href="https://github.com/p2yin">Pengyu Yin</a>
  *
  */
 @Data
