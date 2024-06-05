@@ -1,0 +1,8 @@
+node_modules/
+.DS_Store
+*.class
+.idea/
+dist/
+.DS_Store
+*.log
+build/
