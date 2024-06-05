@@ -1,6 +1,13 @@
 <template>
   <div id="userLoginView">
-    <a-form :model="form" :style="{ width: '600px' }" @submit="handleSubmit">
+    <h1 style="margin-bottom: 16px">Login</h1>
+    <a-form
+      style="max-width: 480px; margin: 0 auto"
+      label-align="left"
+      auto-label-width
+      :model="form"
+      @submit="handleSubmit"
+    >
       <a-form-item field="userAccount" label="Account">
         <a-input
           v-model="form.userAccount"
@@ -16,13 +23,14 @@
         <a-input-password
           v-model="form.userPassword"
           placeholder="Please enter your password"
-          v-model:visibility="visibility"
           allow-clear
         />
       </a-form-item>
 
       <a-form-item>
-        <a-button html-type="submit">Submit</a-button>
+        <a-button type="primary" html-type="submit" style="width: 120px">
+          SignIn
+        </a-button>
       </a-form-item>
     </a-form>
   </div>

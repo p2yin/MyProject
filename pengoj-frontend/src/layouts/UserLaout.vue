@@ -1,7 +1,12 @@
 <template>
   <div id="userLayout">
     <a-layout style="min-height: 100vh">
-      <a-layout-header class="header"> 用户布局 </a-layout-header>
+      <a-layout-header class="header">
+        <a-space>
+          <img src="../assets/OJ.svg" class="logo" />
+          <div>Peng OJ</div>
+        </a-space>
+      </a-layout-header>
       <a-layout-content class="content">
         <router-view />
       </a-layout-content>
@@ -14,19 +19,25 @@
 
 <style scoped>
 #userLayout {
+  text-align: center;
+  background: url("https://images.pexels.com/photos/103553/pexels-photo-103553.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2")
+    0% 0% / 100% 100%;
 }
+
+#userLayout .logo {
+  width: 64px;
+  height: 64px;
+}
+
 #userLayout .header {
-  margin-bottom: 16px;
-  box-shadow: #eee 1px 1px 5px;
+  margin-top: 16px;
 }
 #userLayout .content {
-  background: linear-gradient(to right, #bbb, #fff);
   margin-bottom: 16px;
   padding: 20px;
 }
 
 #userLayout .footer {
-  background: #efefef;
   padding: 16px;
   position: sticky;
   bottom: 0;
