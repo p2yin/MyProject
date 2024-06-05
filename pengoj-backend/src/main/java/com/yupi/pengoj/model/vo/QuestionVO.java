@@ -10,6 +10,9 @@ import java.io.Serializable;
 import java.util.Date;
 import java.util.List;
 
+
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 /**
  * 题目封装类
  * @TableName question
@@ -17,6 +20,7 @@ import java.util.List;
 
 @Data
 public class QuestionVO implements Serializable {
+
     /**
      * id
      */
@@ -45,7 +49,7 @@ public class QuestionVO implements Serializable {
     /**
      * 题目通过数
      */
-    private Integer acceptNum;
+    private Integer acceptedNum;
 
     /**
      * 判题配置(json对象)
@@ -111,6 +115,39 @@ public class QuestionVO implements Serializable {
      * @param question
      * @return
      */
+    //备用方案
+//    public static QuestionVO objToVo(Question question) {
+//        if (question == null) {
+//            return null;
+//        }
+//        QuestionVO questionVO = new QuestionVO();
+//        BeanUtils.copyProperties(question, questionVO);
+//
+//        // JSON fields
+//        String tags = question.getTags();
+//        String judgeConfigStr = question.getJudgeConfig();
+//
+//        // Add logging and validity checks for JSON fields
+//        try {
+//            if (JSONUtil.isJsonArray(tags)) {
+//                questionVO.tags = JSONUtil.toList(JSONUtil.parseArray(tags), String.class);
+//            } else {
+//                logger.error("Invalid JSON format for tags: {}", tags);
+//            }
+//
+//            if (JSONUtil.isJsonObj(judgeConfigStr)) {
+//                questionVO.judgeConfig = JSONUtil.toBean(judgeConfigStr, JudgeConfig.class);
+//            } else {
+//                logger.error("Invalid JSON format for judgeConfig: {}", judgeConfigStr);
+//            }
+//        } catch (Exception e) {
+//            logger.error("Error parsing JSON fields: ", e);
+//            throw new RuntimeException("Error parsing JSON fields", e);
+//        }
+//
+//        return questionVO;
+//    }
+
     public static QuestionVO objToVo(Question question) {
         if (question == null) {
             return null;

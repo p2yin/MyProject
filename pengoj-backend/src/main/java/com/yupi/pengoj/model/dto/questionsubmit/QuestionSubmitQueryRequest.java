@@ -1,17 +1,19 @@
 package com.yupi.pengoj.model.dto.questionsubmit;
 
+import com.yupi.pengoj.common.PageRequest;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 import java.io.Serializable;
 
 /**
- * 创建请求
+ * 查询请求
  *
  * @author <a href="https://github.com/p2yin">Pengyu Yin</a>
- *
  */
 @Data
-public class QuestionSubmitAddRequest implements Serializable {
+@EqualsAndHashCode(callSuper = true)
+public class QuestionSubmitQueryRequest extends PageRequest implements Serializable {
 
 
     /**
@@ -20,15 +22,20 @@ public class QuestionSubmitAddRequest implements Serializable {
     private String language;
 
     /**
-     * 用户代码
+     * 提交状态
      */
-    private String code;
+    private Integer status;
 
 
     /**
      * 题目 id
      */
     private Long questionId;
+
+    /**
+     * 用户 id
+     */
+    private Long userId;
 
     private static final long serialVersionUID = 1L;
 }
