@@ -7,4 +7,6 @@ import store from "./store";
 import "@/plugins/axios";
 import "@/access/accessEnum";
 import "@/access/index";
+import "bytemd/dist/index.css";
+
 createApp(App).use(ArcoVue).use(store).use(router).mount("#app");
