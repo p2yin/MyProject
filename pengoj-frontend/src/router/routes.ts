@@ -6,6 +6,7 @@ import AdminView from "@/views/AdminView.vue";
 import NoAuthView from "@/views/NoAuthView.vue";
 import { RouteRecordRaw } from "vue-router";
 import ACCESS_ENUM from "../access/accessEnum";
+import AddQuestionView from "@/views/question/AddQuestionView.vue";
 
 export const routes: Array<RouteRecordRaw> = [
   {
@@ -27,6 +28,14 @@ export const routes: Array<RouteRecordRaw> = [
     meta: {
       hideInMenu: true,
     },
+  },
+  {
+    path: "/add/question",
+    name: "Add Question",
+    component: AddQuestionView,
+    // meta: {
+    //   access: ACCESS_ENUM.ADMIN,
+    // },
   },
   {
     path: "/",
