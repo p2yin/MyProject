@@ -3,6 +3,10 @@ node_modules/
 *.class
 .idea/
 dist/
-.DS_Store
-*.log
+.vscode/
 build/
+/pengoj-backend/target/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
