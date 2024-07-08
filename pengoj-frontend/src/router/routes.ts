@@ -8,6 +8,7 @@ import { RouteRecordRaw } from "vue-router";
 import ACCESS_ENUM from "../access/accessEnum";
 import AddQuestionView from "@/views/question/AddQuestionView.vue";
 import ManageQuestionView from "@/views/question/ManageQuestionView.vue";
+import QuestionsView from "@/views/question/QuestionsView.vue";
 
 export const routes: Array<RouteRecordRaw> = [
   {
@@ -31,62 +32,72 @@ export const routes: Array<RouteRecordRaw> = [
     },
   },
   {
+    path: "/questions",
+    name: "View Question",
+    component: QuestionsView,
+  },
+  {
     path: "/add/question",
     name: "Add Question",
     component: AddQuestionView,
-    // meta: {
-    //   access: ACCESS_ENUM.ADMIN,
-    // },
+    meta: {
+      access: ACCESS_ENUM.USER,
+    },
   },
   {
     path: "/update/question",
     name: "Update Question",
     component: AddQuestionView,
-    // meta: {
-    //   access: ACCESS_ENUM.ADMIN,
-    // },
+    meta: {
+      access: ACCESS_ENUM.USER,
+      hideInMenu: true,
+    },
   },
   {
     path: "/manage/question",
     name: "Manage Question",
     component: ManageQuestionView,
-    // meta: {
-    //   access: ACCESS_ENUM.ADMIN,
-    // },
-  },
-  {
-    path: "/",
-    name: "View Question",
-    component: HomeView,
-  },
-  {
-    path: "/hide",
-    name: "Hide page",
-    component: HomeView,
-    meta: {
-      hideInMenu: true,
-    },
-  },
-  {
-    path: "/noAuth",
-    name: "No authority page",
-    component: NoAuthView,
-  },
-  {
-    path: "/admin",
-    name: "Only admin visible",
-    component: AdminView,
     meta: {
       access: ACCESS_ENUM.ADMIN,
     },
   },
   {
-    path: "/about",
-    name: "About My",
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () =>
-      import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+    path: "/",
+    name: "HomePage",
+    component: QuestionsView,
   },
+
+  // {
+  //   path: "/hide",
+  //   name: "Hide page",
+  //   component: HomeView,
+  //   meta: {
+  //     hideInMenu: true,
+  //   },
+  // },
+  {
+    path: "/noAuth",
+    name: "No authority page",
+    component: NoAuthView,
+    meta: {
+      hideInMenu: true,
+    },
+  },
+  // {
+  //   path: "/admin",
+  //   name: "Only admin visible",
+  //   component: AdminView,
+  //   meta: {
+  //     access: ACCESS_ENUM.ADMIN,
+  //   },
+  // },
+  // {
+  //   path: "/about",
+  //   name: "About My",
+  //   // route level code-splitting
+  //   // this generates a separate chunk (about.[hash].js) for this route
+  //   // which is lazy-loaded when the route is visited.
+  //   component: () =>
+  //     import(/* webpackChunkName: "about" */ "../views/AboutView.vue"),
+  // },
 ];
